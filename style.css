@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav .logo img {
+    width: 100px;
+    height: auto;
+    max-height: 70px;
+}
+
+@media (min-width: 768px) {
+    nav .logo img {
+        width: auto;
+        max-height: auto;
+    }
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+}
+
+@media (min-width: 768px) {
+    nav {
+        height: 100px;
+        padding: 0 40px;
+    }
+
+    nav .logo {
+        font-size: 2rem;
+    }
+
+    nav ul li a {
+        font-size: 1.4rem;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.logo span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+#showcase {
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1e1e1e;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+
+#showcase h1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    color:rgb(129, 124, 60);
+    margin-bottom: 20px;
+    z-index: 10;
+    position: relative;
+    text-shadow: 10px 10px 4px rgba(20, 1, 1, 1);
+}
+
+#showcase .buttons button {
+    background-color: beige;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+    position: relative;
+}
+
+#showcase .buttons button:hover {
+    background-color: burlywood;
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.slideshow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+#about {
+    background-color: #222;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+#games {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #121212;
+    color: #fff;
+}
+
+#games h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.game-card {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.game-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    display: block;
+}
+
+.game-card h3 {
+    padding: 15px 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #111;
+    margin: 0;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+
+#contact {
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-icons a {
+    color: #fff;
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-icons a:hover {
+    color: burlywood;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .contact-icons a {
+        font-size: 2rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
